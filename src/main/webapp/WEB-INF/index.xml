@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context" xmlns:rabbit="http://www.springframework.org/schema/rabbit"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+         http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+         http://www.springframework.org/schema/context
+         http://www.springframework.org/schema/context/spring-context-4.2.xsd
+         http://www.springframework.org/schema/rabbit
+         http://www.springframework.org/schema/rabbit/spring-rabbit-1.5.xsd"
+	default-init-method="init" default-destroy-method="destroy">
+
+	<bean id="indexManager" class="pdd.crucio.index.IndexManager">
+		<property name="indexFactory">
+			<list>
+				<!-- job.search104.com -->
+				<bean class="pdd.crucio.index.IndexFactoryLocal">
+					<property name="name" value="pda.JobOn" />
+					<property name="propertyPath" value="/opt/indexCopy/pda.JobOn.xml" />
+				</bean>
+				<bean class="pdd.crucio.index.IndexFactoryLocal">
+					<property name="name" value="pda.HotJobOn" />
+					<property name="propertyPath" value="/opt/indexCopy/pda.HotJobOn.xml" />
+				</bean>
+				<bean class="pdd.crucio.index.IndexFactoryLocal">
+					<property name="name" value="pda.JobMixCase" />
+					<property name="propertyPath" value="/opt/indexCopy/pda.JobMixCase.xml" />
+				</bean>
+
+				<!-- joboff.search104.com -->
+				<bean class="pdd.crucio.index.IndexFactoryLocal">
+					<property name="name" value="service.JobOff" />
+					<property name="propertyPath" value="/opt/indexCopy/service.JobOff.xml" />
+				</bean>
+
+				<!-- search.104.com.tw -->
+				<bean class="pdd.crucio.index.IndexFactoryLocal">
+					<property name="name" value="dagama.AreaAc" />
+					<property name="propertyPath" value="/opt/indexCopy/dagama.AreaAc.xml" />
+				</bean>
+				<bean class="pdd.crucio.index.IndexFactoryLocal">
+					<property name="name" value="dagama.JobAc" />
+					<property name="propertyPath" value="/opt/indexCopy/dagama.JobAc.xml" />
+				</bean>
+				<bean class="pdd.crucio.index.IndexFactoryLocal">
+					<property name="name" value="dagama.School" />
+					<property name="propertyPath" value="/opt/indexCopy/dagama.School.xml" />
+				</bean>
+				<bean class="pdd.crucio.index.IndexFactoryLocal">
+					<property name="name" value="ncc.EduMajor" />
+					<property name="propertyPath" value="/opt/indexCopy/ncc.EduMajor.xml" />
+				</bean>
+				<bean class="pdd.crucio.index.IndexFactoryLocal">
+					<property name="name" value="ncc.SchoolMajor" />
+					<property name="propertyPath" value="/opt/indexCopy/ncc.SchoolMajor.xml" />
+				</bean>
+				<bean class="pdd.crucio.index.IndexFactoryLocal">
+					<property name="name" value="ncc.SimilarMajor" />
+					<property name="propertyPath" value="/opt/indexCopy/ncc.SimilarMajor.xml" />
+				</bean>
+				<bean class="pdd.crucio.index.IndexFactoryLocal">
+					<property name="name" value="ncc.SimilarSchool" />
+					<property name="propertyPath" value="/opt/indexCopy/ncc.SimilarSchool.xml" />
+				</bean>
+				<bean class="pdd.crucio.index.IndexFactoryLocal">
+					<property name="name" value="pda.CustProfileOn" />
+					<property name="propertyPath" value="/opt/indexCopy/pda.CustProfileOn.xml" />
+				</bean>
+				<bean class="pdd.crucio.index.IndexFactoryLocal">
+					<property name="name" value="pda.CustProfileNew" />
+					<property name="propertyPath" value="/opt/indexCopy/pda.CustProfileNew.xml" />
+				</bean>
+				<bean class="pdd.crucio.index.IndexFactoryLocal">
+					<property name="name" value="service.SOP" />
+					<property name="propertyPath" value="/opt/indexCopy/service.SOP.xml" />
+				</bean>
+				<bean class="pdd.crucio.index.IndexFactoryLocal">
+					<property name="name" value="Function01" />
+					<property name="propertyPath" value="/opt/indexCopy/Function01.xml" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+
+</beans>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans 
+    http://www.springframework.org/schema/beans/spring-beans-4.2.xsd">
+
+	<import resource="classpath:org/codehaus/xfire/spring4/xfire.xml" />
+
+	<bean id="indexService" class="legacy.webservice.IndexService">
+		<property name="indexManager" ref="indexManager" />
+	</bean>
+
+	<bean id="ws" class="org.codehaus.xfire.spring.ServiceBean">
+		<property name="name" value="IndexService" />
+		<property name="namespace" value="http://search.com" />
+		<property name="serviceClass" value="legacy.webservice.SearchService" />
+		<property name="serviceBean" ref="indexService" />
+	</bean>
+</beans>
